@@ -1,14 +1,15 @@
-from random import *
+from random import randint
 import time
 #char 0 - 1114111
-hi = input("")
+hi = input("Press Enter to begin!")
 
 place = 0
 word = "hello world"
-refreshrate = 5000
+refreshrate = 500000
 progress = ""
 start = time.time()
 count = 0
+totalcount = 0
 printed = False
 while printed == False:
   letter = chr(randint(0,1114111))
@@ -20,6 +21,7 @@ while printed == False:
       count = refreshrate - 1
 
   count += 1
+  totalcount += 1
       
   if letter == word[place]:
     progress += (word[place])
@@ -29,8 +31,8 @@ while printed == False:
     print(progress)
     end = time.time()
     print("Time in seconds: " + str(end - start))
+    print("Total guesses: " + str(totalcount) )
     break
     
     
-  
   
